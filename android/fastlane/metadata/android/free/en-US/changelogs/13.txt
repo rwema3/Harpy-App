@@ -1,0 +1,7 @@
+Version 0.2.1
+2020-09-08
+
+· Added theme customization
+· Changed Harpy logo
+· Changed predefined themes
+· Changed about screen layout

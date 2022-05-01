@@ -1,0 +1,191 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+opt_out_usage
+
+default_platform(:android)
+
+platform :android do
+
+  #
+  # free
+  #
+
+  desc "free production play store"
+  lane :free_production do
+  end
+
+  desc "free beta play store"
+  lane :free_beta do
+    api_key = ENV['free_twitter_key']
+    api_secret = ENV['free_twitter_secret']
+    sentry_dsn = ENV['sentry_dsn']
+
+    if api_key.nil?
+      puts "missing twitter_consumer_key environment variable in android/fastlane/.env"
+    elsif api_secret.nil?
+      puts "missing twitter_consumer_secret environment variable in android/fastlane/.env"
+    elsif sentry_dsn.nil?
+      puts "missing sentry_dsn environment variable in android/fastlane/.env"
+    else
+      # build appbundle
+      sh(
+        "flutter",
+        "build",
+        "appbundle",
+        "--flavor",
+        "free",
+        "--dart-define",
+        "flavor=free",
+        "--dart-define",
+        "twitter_consumer_key=#{api_key}",
+        "--dart-define",
+        "twitter_consumer_secret=#{api_secret}",
+        "--dart-define",
+        "sentry_dsn=#{sentry_dsn}"
+      )
+
+      upload_to_play_store(
+        track: 'beta',
+        aab: '../build/app/outputs/bundle/freeRelease/app-free-release.aab',
+        metadata_path: './fastlane/metadata/android/free'
+      )
+    end
+  end
+
+  desc "free alpha play store"
+  lane :free_alpha do
+    api_key = ENV['free_twitter_key']
+    api_secret = ENV['free_twitter_secret']
+    sentry_dsn = ENV['sentry_dsn']
+
+    if api_key.nil?
+      puts "missing free_twitter_key environment variable in android/fastlane/.env"
+    elsif api_secret.nil?
+      puts "missing free_twitter_secret environment variable in android/fastlane/.env"
+    elsif sentry_dsn.nil?
+      puts "missing sentry_dsn environment variable in android/fastlane/.env"
+    else
+      # build appbundle
+      sh(
+        "flutter",
+        "build",
+        "appbundle",
+        "--flavor",
+        "free",
+        "--dart-define",
+        "flavor=free",
+        "--dart-define",
+        "twitter_consumer_key=#{api_key}",
+        "--dart-define",
+        "twitter_consumer_secret=#{api_secret}",
+        "--dart-define",
+        "sentry_dsn=#{sentry_dsn}"
+      )
+
+      upload_to_play_store(
+        track: 'alpha',
+        aab: '../build/app/outputs/bundle/freeRelease/app-free-release.aab',
+        metadata_path: './fastlane/metadata/android/free'
+      )
+    end
+  end
+
+
+  #
+  # pro
+  #
+
+  desc "pro production play store"
+  lane :pro_production do
+  end
+
+  desc "pro beta play store"
+  lane :pro_beta do
+    api_key = ENV['pro_twitter_key']
+    api_secret = ENV['pro_twitter_secret']
+    sentry_dsn = ENV['sentry_dsn']
+
+    if api_key.nil?
+      puts "missing pro_twitter_key environment variable in android/fastlane/.env"
+    elsif api_secret.nil?
+      puts "missing pro_twitter_secret environment variable in android/fastlane/.env"
+    elsif sentry_dsn.nil?
+      puts "missing sentry_dsn environment variable in android/fastlane/.env"
+    else
+      # build appbundle
+      sh(
+        "flutter",
+        "build",
+        "appbundle",
+        "--flavor",
+        "pro",
+        "--dart-define",
+        "flavor=pro",
+        "--dart-define",
+        "twitter_consumer_key=#{api_key}",
+        "--dart-define",
+        "twitter_consumer_secret=#{api_secret}",
+        "--dart-define",
+        "sentry_dsn=#{sentry_dsn}"
+      )
+
+      upload_to_play_store(
+        track: 'beta',
+        aab: '../build/app/outputs/bundle/proRelease/app-pro-release.aab',
+        metadata_path: './fastlane/metadata/android/pro'
+      )
+    end
+  end
+
+  desc "pro alpha play store"
+  lane :pro_alpha do
+    api_key = ENV['pro_twitter_key']
+    api_secret = ENV['pro_twitter_secret']
+    sentry_dsn = ENV['sentry_dsn']
+
+    if api_key.nil?
+      puts "missing pro_twitter_key environment variable in android/fastlane/.env"
+    elsif api_secret.nil?
+      puts "missing pro_twitter_secret environment variable in android/fastlane/.env"
+    elsif sentry_dsn.nil?
+      puts "missing sentry_dsn environment variable in android/fastlane/.env"
+    else
+      # build appbundle
+      sh(
+        "flutter",
+        "build",
+        "appbundle",
+        "--flavor",
+        "pro",
+        "--dart-define",
+        "flavor=pro",
+        "--dart-define",
+        "twitter_consumer_key=#{api_key}",
+        "--dart-define",
+        "twitter_consumer_secret=#{api_secret}",
+        "--dart-define",
+        "sentry_dsn=#{sentry_dsn}"
+      )
+
+      upload_to_play_store(
+        track: 'alpha',
+        aab: '../build/app/outputs/bundle/proRelease/app-pro-release.aab',
+        metadata_path: './fastlane/metadata/android/pro'
+      )
+    end
+  end
+
+end

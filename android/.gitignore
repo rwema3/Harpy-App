@@ -1,0 +1,25 @@
+gradle-wrapper.jar
+/.gradle
+/captures/
+/gradlew
+/gradlew.bat
+/local.properties
+GeneratedPluginRegistrant.java
+build/
+
+# play store key
+fastlane/play_store_key.json
+
+# fastlane specific
+**/fastlane/report.xml
+fastlane/.env
+fastlane/.env.*
+
+# deliver temporary files
+**/fastlane/Preview.html
+
+# snapshot generated screenshots
+**/fastlane/screenshots
+
+# scan temporary files
+**/fastlane/test_output
