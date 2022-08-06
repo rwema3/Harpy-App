@@ -5,6 +5,9 @@ import 'package:harpy/core/core.dart';
 import 'package:harpy/misc/misc.dart';
 import 'package:provider/provider.dart';
 
+class ChangelogScreen extends StatefulWidget {
+  const ChangelogScreen();
+
   static const route = 'changelog';
 
   @override
