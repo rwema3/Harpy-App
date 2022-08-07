@@ -43,11 +43,6 @@ class _ChangelogScreenState extends State<ChangelogScreen> {
     });
   }
 
-  @override
-  Widget build(BuildContext context) {
-    final config = context.watch<ConfigCubit>().state;
-
-    Widget child;
 
     if (_dataList == null) {
       child = const Center(child: CircularProgressIndicator());
