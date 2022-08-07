@@ -7,6 +7,21 @@ import 'package:provider/provider.dart';
   List<Widget> _buildActions(
     FindTrendsLocationsBloc bloc,
     TabController tabController,
+  ) {
+    return [
+      DialogAction<void>(
+        text: 'back',
+        onTap: () {
+          FocusScope.of(context).unfocus();
+
+          if (tabController.index == 0) {
+            Navigator.of(context).pop();
+          } else {
+            setState(() {
+              _validForm = false;
+              _latitude = null;
+              _longitude = null;
+            });
 
             // wait for the view to rebuild before navigating away
             // this ensures that the confirm button gets disabled
