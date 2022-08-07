@@ -4,7 +4,7 @@ import 'package:harpy/harpy_widgets/harpy_widgets.dart';
 import 'package:provider/provider.dart';
 
 /// A dialog that allows the user to find relevant trends locations.
-///
+///allow the user to find relevant trend.
 
 
 class _FindLocationDialogState extends State<FindLocationDialog> {
