@@ -5,14 +5,7 @@ import 'package:provider/provider.dart';
 
 /// A dialog that allows the user to find relevant trends locations.
 ///
-/// The user can use their geolocation data to find nearby locations or enter
-/// custom geolocation coordinates.
-class FindLocationDialog extends StatefulWidget {
-  const FindLocationDialog();
 
-  @override
-  _FindLocationDialogState createState() => _FindLocationDialogState();
-}
 
 class _FindLocationDialogState extends State<FindLocationDialog> {
   final _form = GlobalKey<FormState>();
