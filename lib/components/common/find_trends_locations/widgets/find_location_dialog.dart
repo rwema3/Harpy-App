@@ -15,13 +15,6 @@ class _FindLocationDialogState extends State<FindLocationDialog> {
   String? _latitude;
   String? _longitude;
 
-  bool get _enableConfirm =>
-      _validForm &&
-      _latitude != null &&
-      _latitude!.isNotEmpty &&
-      _longitude != null &&
-      _longitude!.isNotEmpty;
-
   List<Widget> _buildActions(
     FindTrendsLocationsBloc bloc,
     TabController tabController,
