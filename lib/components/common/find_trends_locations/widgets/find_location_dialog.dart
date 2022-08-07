@@ -3,6 +3,17 @@ import 'package:harpy/components/components.dart';
 import 'package:harpy/harpy_widgets/harpy_widgets.dart';
 import 'package:provider/provider.dart';
 
+/// A dialog that allows the user to find relevant trends locations.
+///
+
+
+class _FindLocationDialogState extends State<FindLocationDialog> {
+  final _form = GlobalKey<FormState>();
+
+  bool _validForm = false;
+
+  String? _latitude;
+  String? _longitude;
 
   List<Widget> _buildActions(
     FindTrendsLocationsBloc bloc,
