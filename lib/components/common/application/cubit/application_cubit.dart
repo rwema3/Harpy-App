@@ -15,15 +15,6 @@ import 'package:visibility_detector/visibility_detector.dart';
 ///
 /// Navigates to the [HomeScreen] When a previous session has been restored.
 /// Navigates to the [LoginScreen] otherwise.
-class ApplicationCubit extends Cubit<ApplicationState> with HarpyLogger {
-  ApplicationCubit({
-    required this.systemBrightness,
-    required this.themeBloc,
-    required this.configCubit,
-    required this.authenticationCubit,
-  }) : super(ApplicationState.uninitialized) {
-    _initialize();
-  }
 
   final Brightness systemBrightness;
   final ThemeBloc themeBloc;
