@@ -14,16 +14,7 @@ import 'package:visibility_detector/visibility_detector.dart';
 /// Starts the application initialization upon starting the app.
 ///
 
-    // sets the visibility detector controller update interval to fire more
-    // frequently
-    // this is used by the VisibilityDetector for the ListCardAnimation
-    VisibilityDetectorController.instance.updateInterval = const Duration(
-      milliseconds: 50,
-    );
-
-    // need the device info before we continue with updating the system ui
-    await app<HarpyInfo>().initialize();
-
+  
     // update the system ui to match the initial theme
     unawaited(
       _initializeSystemUi(
