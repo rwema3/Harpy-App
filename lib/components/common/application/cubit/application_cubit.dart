@@ -14,15 +14,8 @@ import 'package:visibility_detector/visibility_detector.dart';
 /// Starts the application initialization upon starting the app.
 ///
 
-  
-    // update the system ui to match the initial theme
-    unawaited(
-      _initializeSystemUi(
-        isFree || systemBrightness == Brightness.dark
-            ? themeBloc.state.darkHarpyTheme
-            : themeBloc.state.lightHarpyTheme,
-      ),
-    );
+
+    
 
     await Future.wait([
       FlutterDisplayMode.setHighRefreshRate().handleError(silentErrorHandler),
