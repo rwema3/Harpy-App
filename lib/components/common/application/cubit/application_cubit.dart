@@ -16,10 +16,6 @@ import 'package:visibility_detector/visibility_detector.dart';
 /// Navigates to the [HomeScreen] When a previous session has been restored.
 /// Navigates to the [LoginScreen] otherwise.
 
-  final Brightness systemBrightness;
-  final ThemeBloc themeBloc;
-  final ConfigCubit configCubit;
-  final AuthenticationCubit authenticationCubit;
 
   Future<void> _initialize() async {
     if (!kReleaseMode) {
