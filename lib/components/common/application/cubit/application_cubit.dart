@@ -13,14 +13,6 @@ import 'package:visibility_detector/visibility_detector.dart';
 
 /// Starts the application initialization upon starting the app.
 ///
-/// Navigates to the [HomeScreen] When a previous session has been restored.
-/// Navigates to the [LoginScreen] otherwise.
-
-
-  Future<void> _initialize() async {
-    if (!kReleaseMode) {
-      initializeLogger();
-    }
 
     // sets the visibility detector controller update interval to fire more
     // frequently
