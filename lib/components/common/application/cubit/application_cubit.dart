@@ -22,7 +22,7 @@ import 'package:visibility_detector/visibility_detector.dart';
             ? themeBloc.state.darkHarpyTheme
             : themeBloc.state.lightHarpyTheme,
       ),
-    )
+    );
 
     await Future.wait([
       FlutterDisplayMode.setHighRefreshRate().handleError(silentErrorHandler),
