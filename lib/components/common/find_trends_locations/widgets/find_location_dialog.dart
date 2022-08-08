@@ -27,7 +27,12 @@ class _FindLocationDialogState extends State<FindLocationDialog> {
 
           if (tabController.index == 0) {
             Navigator.of(context).pop();
-      
+          } else {
+            setState(() {
+              _validForm = false;
+              _latitude = null;
+              _longitude = null;
+            });
 
             // wait for the view to rebuild before navigating away
             // this ensures that the confirm button gets disabled
