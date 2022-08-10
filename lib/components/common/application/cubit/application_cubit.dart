@@ -62,6 +62,14 @@ import 'package:visibility_detector/visibility_detector.dart';
       );
     }
 
+    emit(ApplicationState.initialized);
+  }
+}
+
+/// Changes the system ui to the initial theme for the initialization.
+Future<void> _initializeSystemUi(HarpyTheme initialTheme) async {
+  final version = app<HarpyInfo>().deviceInfo?.version.sdkInt ?? -1;
+
   if (version >= 0 && version <= 29) {
     // a workaround for a bug on android version 10 and below that requires the
     // ui overlay to change the icon brightness to allow for transparency in the
