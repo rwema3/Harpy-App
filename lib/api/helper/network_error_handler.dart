@@ -17,7 +17,13 @@ void silentErrorHandler(dynamic error, [StackTrace? stackTrace]) {
   _log.info('silently ignoring error', error, stackTrace);
 }
 
+/// Handles the [error] from a request.
+///
+/// An error message is shown in a [HarpyMessage].
+void twitterApiErrorHandler(dynamic error, [StackTrace? stackTrace]) {
+  _log.info('handling twitter error', error);
 
+  String? message;
 
   if (error is Response) {
     // response error (status code != 2xx)
