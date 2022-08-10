@@ -34,13 +34,6 @@ class _FindLocationDialogState extends State<FindLocationDialog> {
               _longitude = null;
             });
 
-            // wait for the view to rebuild before navigating away
-            // this ensures that the confirm button gets disabled
-            WidgetsBinding.instance!.addPostFrameCallback((_) {
-              tabController.animateTo(0);
-              bloc.add(const FindTrendsLocationsEvent.clear());
-            });
-          }
         },
       ),
     ];
