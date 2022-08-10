@@ -45,6 +45,11 @@ import 'package:visibility_detector/visibility_detector.dart';
       ),
     );
 
+    await Future.wait([
+      FlutterDisplayMode.setHighRefreshRate().handleError(silentErrorHandler),
+      app<HarpyPreferences>().initialize(),
+      app<ConnectivityService>().initialize(),
+    ]);
 
     // initialize config after harpy preferences initialized
     configCubit.initialize();
