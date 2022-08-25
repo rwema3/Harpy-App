@@ -7,12 +7,6 @@ import 'package:harpy/harpy_widgets/harpy_widgets.dart';
 import 'package:harpy/misc/misc.dart';
 import 'package:provider/provider.dart';
 
-const isFree = String.fromEnvironment('flavor', defaultValue: 'free') == 'free';
-const isPro = String.fromEnvironment('flavor') == 'pro';
-
-/// Builds the root [MaterialApp].
-class Harpy extends StatelessWidget {
-  const Harpy();
 
   @override
   Widget build(BuildContext context) {
