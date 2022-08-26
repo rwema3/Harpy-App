@@ -13,3 +13,11 @@ import 'package:harpy/harpy.dart';
 void main() {
   // sets up the global service locator
   setupServices();
+
+  // HarpyErrorHandler will run the app and handle uncaught errors
+  HarpyErrorHandler(
+    child: const GlobalProvider(
+      child: Harpy(),
+    ),
+  );
+}
